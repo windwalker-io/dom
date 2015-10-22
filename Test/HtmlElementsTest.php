@@ -38,6 +38,7 @@ class HtmlElementsTest extends \PHPUnit_Framework_TestCase
 			new HtmlElement('p', 'foo'),
 			new HtmlElement('table', new HtmlElement('tr', new HtmlElement('td', 'bar'))),
 			new HtmlElement('div', 'yoo', array('id' => 'fly')),
+			new HtmlElement('input', 'content', array('type' => 'checkbox')),
 		);
 
 		$this->instance = new HtmlElements($elements);
@@ -70,6 +71,7 @@ class HtmlElementsTest extends \PHPUnit_Framework_TestCase
 	</tr>
 </table>
 <div id="fly">yoo</div>
+<input type="checkbox" />content
 DOM;
 
 		$this->assertEquals(

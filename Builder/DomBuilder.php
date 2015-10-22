@@ -35,7 +35,11 @@ class DomBuilder
 
 		if ($content !== null)
 		{
-			$tag .= '>' . $content . '</' . $name . '>';
+			$gt = $forcePair ? '>' : ' />';
+
+			$closeTag = $forcePair ? '</' . $name . '>' : '';
+
+			$tag .= $gt . $content . $closeTag;
 		}
 		else
 		{
